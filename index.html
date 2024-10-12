@@ -28,7 +28,14 @@
     </style>
 </head>
 <body>
-<script>
+
+    <p>BY BEING OUR 4TH<br>
+    CUSTOMER YOU WON<br>
+    <span class="highlight">75% OFF</span> YOUR<br>
+    NEXT ORDER<br>
+    THERE IS YOUR GIFT CODE: </p>
+   <p id="code"></p>
+    <script>
         // Function to get the value of a URL parameter by name
         function getParameterByName(name) {
             const url = window.location.href;
@@ -46,12 +53,6 @@
         // Display the code on the webpage
         document.getElementById('code').textContent = code ? code : 'No code found in URL';
     </script>
-    <p>BY BEING OUR 4TH<br>
-    CUSTOMER YOU WON<br>
-    <span class="highlight">75% OFF</span> YOUR<br>
-    NEXT ORDER<br>
-    THERE IS YOUR GIFT CODE: </p>
-<p id="code"></p>
 </body>
 </html>
 
