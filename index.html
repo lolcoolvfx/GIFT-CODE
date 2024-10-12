@@ -28,11 +28,31 @@
     </style>
 </head>
 <body>
+<script>
+        // Function to get the value of a URL parameter by name
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the 'code' parameter from the URL
+        const code = getParameterByName('code');
+
+        // Display the code on the webpage
+        document.getElementById('code').textContent = code ? code : 'No code found in URL';
+    </script>
     <p>BY BEING OUR 4TH<br>
     CUSTOMER YOU WON<br>
     <span class="highlight">75% OFF</span> YOUR<br>
     NEXT ORDER<br>
-    THERE IS YOUR GIFT CODE: BTZJNRBHZ6XN</p>
+    THERE IS YOUR GIFT CODE: </p>
+<p id="code"></p>
 </body>
 </html>
+
 
