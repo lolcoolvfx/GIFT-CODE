@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACTR GIFT CARD</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Bebas Neue', sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-        }
-        p {
-            font-size: 2rem;
-            color: #333;
-        }
-        .highlight {
-            color: red;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ACTR GIFT CARD</title>
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   <style>
+       body {
+           margin: 0;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+           font-family: 'Bebas Neue', sans-serif;
+           text-align: center;
+           background-color: #f0f0f0;
+       }
+       p {
+           font-size: 2rem;
+           color: #333;
+       }
+       .highlight {
+           color: red;
+           text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+       }
+   </style>
 </head>
 <body>
+   <p>BY BEING OUR 4TH<br>
+       CUSTOMER YOU WON<br>
+       <span class="highlight">75% OFF</span> YOUR<br>
+       NEXT ORDER<br>
+       THERE IS YOUR GIFT CODE: <span id="code">Your code</span></p>
+     
+<script>
+       // Function to get the value of a URL parameter by name
+       function getParameterByName(name) {
+           const url = window.location.href;
+           name = name.replace(/[\[\]]/g, "\\$&");
+           const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+           const results = regex.exec(url);
+           if (!results) return null;
+           if (!results[2]) return '';
+           return decodeURIComponent(results[2].replace(/\+/g, " "));
+       }
 
-    <p>BY BEING OUR 4TH<br>
-    CUSTOMER YOU WON<br>
-    <span class="highlight">75% OFF</span> YOUR<br>
-    NEXT ORDER<br>
-    THERE IS YOUR GIFT CODE: </p>
-   <p id="code"></p>
-    <script>
-        // Function to get the value of a URL parameter by name
-        function getParameterByName(name) {
-            const url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
-            const results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
 
-        // Get the 'code' parameter from the URL
-        const code = getParameterByName('code');
+       // Get the 'code' parameter from the URL
+       const code = getParameterByName('code');
+       // Display the code on the webpage
+       if (code != undefined && code != null){
+           document.getElementById('code').textContent = code;}
+       else { document.getElementById('code').textContent = 'No code found in URL';}
+   </script>
 
-        // Display the code on the webpage
-        document.getElementById('code').textContent = code ? code : 'No code found in URL';
-    </script>
+
 </body>
 </html>
-
 
